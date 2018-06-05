@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import SideMenu from 'react-native-side-menu';
-import Menu from './src/scenes/menu/Menu';
-import Home from './src/scenes/home/Home';
+import Menu from './src/scenes/Menu/Menu';
+import Home from './src/scenes/Home/Home';
 
 export default class Basic extends Component {
   constructor(props) {
