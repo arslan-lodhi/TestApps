@@ -45,7 +45,7 @@ export default function Menu({ onItemSelected }) {
   return (
     <ScrollView scrollsToTop={false} style={styles.menu}>
       <View style={styles.avatarContainer}>
-        <Text style={styles.name}>Bayut.com</Text>
+        <Text style={styles.name}>Explorer</Text>
       </View>
 
       <Text
