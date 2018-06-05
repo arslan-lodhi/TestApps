@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 
 const window = Dimensions.get('window');
-const uri = 'https://pickaface.net/gallery/avatar/Opi51c74d0125fd4.png';
 
 const styles = StyleSheet.create({
   menu: {
@@ -21,8 +20,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   avatarContainer: {
-    marginBottom: 20,
-    marginTop: 20,
+    marginBottom: 30,
+    marginTop: 30,
   },
   avatar: {
     width: 48,
@@ -46,25 +45,39 @@ export default function Menu({ onItemSelected }) {
   return (
     <ScrollView scrollsToTop={false} style={styles.menu}>
       <View style={styles.avatarContainer}>
-        <Image
-          style={styles.avatar}
-          source={{ uri }}
-        />
-        <Text style={styles.name}>Your name</Text>
+        <Text style={styles.name}>Bayut.com</Text>
       </View>
 
       <Text
-        onPress={() => onItemSelected('About')}
+        onPress={() => onItemSelected('Home')}
         style={styles.item}
       >
-        About
+        Home
       </Text>
 
       <Text
-        onPress={() => onItemSelected('Contacts')}
+        onPress={() => onItemSelected('New Search')}
         style={styles.item}
       >
-        Contacts
+        New Search
+      </Text>
+      <Text
+        onPress={() => onItemSelected('Last Search')}
+        style={styles.item}
+      >
+        Last Search
+      </Text>
+      <Text
+        onPress={() => onItemSelected('saved Searches')}
+        style={styles.item}
+      >
+        Saved Searches
+      </Text>
+      <Text
+        onPress={() => onItemSelected('Favourites')}
+        style={styles.item}
+      >
+       Favourites
       </Text>
     </ScrollView>
   );

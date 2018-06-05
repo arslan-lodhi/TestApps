@@ -7,37 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import SideMenu from 'react-native-side-menu';
-import Menu from './Menu';
-
-
-const styles = StyleSheet.create({
-  button: {
-    position: 'absolute',
-    top: 20,
-    padding: 10,
-  },
-  caption: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    alignItems: 'center',
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+import Menu from './src/scenes/menu/Menu';
+import Home from './src/scenes/home/Home';
 
 export default class Basic extends Component {
   constructor(props) {
@@ -47,7 +18,7 @@ export default class Basic extends Component {
 
     this.state = {
       isOpen: false,
-      selectedItem: 'About',
+      selectedItem: 'Home',
     };
   }
 
@@ -76,27 +47,9 @@ export default class Basic extends Component {
         isOpen={this.state.isOpen}
         onChange={isOpen => this.updateMenuState(isOpen)}
       >
-        <View style={styles.container}>
-          <Text style={styles.welcome}>
-            Welcome to React Native!
-          </Text>
-          <Text style={styles.instructions}>
-            To get started, edit index.ios.js
-          </Text>
-          <Text style={styles.instructions}>
-            Press Cmd+R to reload,{'\n'}
-            Cmd+Control+Z for dev menu
-          </Text>
-          <Text style={styles.instructions}>
-            Current selected menu item is: {this.state.selectedItem}
-          </Text>
-        </View>
-        <TouchableOpacity
-          onPress={this.toggle}
-          style={styles.button}
-        >
-          
-        </TouchableOpacity>
+       <Home >
+         
+       </Home>
       </SideMenu>
     );
   }
