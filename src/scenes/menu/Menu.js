@@ -8,77 +8,53 @@ import {
   Image,
   Text,
 } from 'react-native';
+import { MenuItem,HeaderContainer } from "./MenuStyle";
+import { HeaderText } from "./MenuStyle";
 
 const window = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   menu: {
     flex: 1,
-    width: window.width,
+    width: window.width/1.5,
     height: window.height,
-    backgroundColor: 'gray',
-    padding: 20,
-  },
-  avatarContainer: {
-    marginBottom: 30,
-    marginTop: 30,
-  },
-  avatar: {
-    width: 48,
-    height: 48,
-    borderRadius: 24,
-    flex: 1,
-  },
-  name: {
-    position: 'absolute',
-    left: 70,
-    top: 20,
-  },
-  item: {
-    fontSize: 14,
-    fontWeight: '300',
-    paddingTop: 5,
-  },
+    backgroundColor: 'gray'
+  }
 });
 
 export default function Menu({ onItemSelected }) {
   return (
     <ScrollView scrollsToTop={false} style={styles.menu}>
-      <View style={styles.avatarContainer}>
-        <Text style={styles.name}>Explorer</Text>
-      </View>
+      <HeaderContainer>
+        <HeaderText>Explorer</HeaderText>
+      </HeaderContainer>
 
-      <Text
+      <MenuItem
         onPress={() => onItemSelected('Home')}
-        style={styles.item}
       >
         Home
-      </Text>
+      </MenuItem>
 
-      <Text
+      <MenuItem
         onPress={() => onItemSelected('New Search')}
-        style={styles.item}
       >
         New Search
-      </Text>
-      <Text
+      </MenuItem>
+      <MenuItem
         onPress={() => onItemSelected('Last Search')}
-        style={styles.item}
       >
         Last Search
-      </Text>
-      <Text
+      </MenuItem>
+      <MenuItem
         onPress={() => onItemSelected('saved Searches')}
-        style={styles.item}
       >
         Saved Searches
-      </Text>
-      <Text
+      </MenuItem>
+      <MenuItem
         onPress={() => onItemSelected('Favourites')}
-        style={styles.item}
       >
        Favourites
-      </Text>
+      </MenuItem>
     </ScrollView>
   );
 }
